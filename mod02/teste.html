@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercitando JS</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        n1 = Number(window.prompt('Digite um número:'))
+        n2 = Number(window.prompt('Digite outro número:'))
+        s = n1 + n2
+        window.alert(`A soma total entre o ${n1} e ${n2} é de ${s}`)
+        */
+        /*
+        nome = window.prompt('Digite seu nome completo:')
+        document.write(`Seu nome completo em letras maiúsculas é ${nome.toUpperCase()}!<br/>`)
+        document.write(`Seu nome completo em letras minúsculas é ${nome.toLowerCase()}!`)
+        */
+        s = window.prompt('Digite o valor do seu salário:')
+        sal = s.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}) 
+        document.write(`Seu salário atual é de ${sal}`) 
+    </script>
+
+</body>
+</html>
