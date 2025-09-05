@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1> Sua nacionalidade </h1>
+   Em que país você nasceu? <input type="text" name="txtnasc" id="txtnasc"> <br>
+    Em que país você mora atualmente? <input type="text" name="txtvive" id="txtvive"> <br>
+    <input type="button" value="resultado" onclick="nacionalidade ()">
+    <div id="res"></div>
+
+    <script>
+        function nacionalidade () {
+            var nasc = window.document.querySelector('input#txtnasc')
+            var vive = window.document.querySelector('input#txtvive')
+            var res = window.document.querySelector('div#res')
+            res.innerHTML = `<p> Você nasceu em ${nasc} e vive em ${vive}, portanto você: </p>`
+                if (nasc == vive) {
+                    res.innerHTML += `<p> Você não é estrangeiro no atual país em que mora </p>` 
+                } else {
+                    res.innerHTML += `<p> Você é estrangeiro no atual país em que mora </p>`
+                }
+        }
+    </script>
+
+</body>
+</html>
