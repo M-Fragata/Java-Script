@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do dia</title>
+
+    <style>
+        body{
+            background-color: lightgray;
+        }
+        header h1{
+            text-align: center;  
+        }
+        div#container{
+            display: block;
+            left: 50%;
+            transform: translate(-50%,-0%);
+            position: absolute;
+            background-color: white;
+            height: 300px;
+            width: 500px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.416);
+            text-align: center;
+        }
+
+        div#conteudo{
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: black;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <h1>Hora do Dia</h1>
+    </header>
+     
+    <section>
+        <div id="container">
+            <script id="script">
+            var agora = new Date()
+            var hora = agora.getHours() 
+            window.document.write(`Agora são ${hora} horas`)
+            </script>
+
+            <div id="conteudo">
+
+            </div>
+        </div>
+    </section> 
+    
+    <footer>
+
+    </footer>
+
+</body>
+</html>
