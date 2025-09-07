@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 body{
     background-color: rgb(77, 211, 255);
     font: normal 15pt arial;
@@ -14,9 +15,14 @@ section{
     background-color: white;
     border-radius: 10px;
     padding: 15px;
-    width: 500px;
+    max-width: 500px;
     margin: auto;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.291);
+}
+
+div {
+    text-align: center;
+    padding: 10px;
 }
 
 footer{
