@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: black;
+            margin: 0%;
+        }
+        div#res{
+            background: linear-gradient(to bottom, yellow, orange);
+            color: white;
+            padding: 10px;
+            max-width: 600px;
+            height: 600px;
+            text-align: center;
+            margin: auto;
+            font-size: clamp(2rem, 10vw, 5em);
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+        }
+
+        div#msg{
+            background-color: white;
+            font-size: clamp(2rem, 10vw, 3em);
+            max-width: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            margin: auto;
+        }
+
+        div#img{
+            background-color: white;
+            max-width: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            margin: auto;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <section>
+
+        <div id="msg">
+            
+        </div> 
+        
+        <div id="img">
+            <img src="" alt="">
+        </div>
+
+        <div id="res">
+            
+        </div> 
+
+        
+    </section>    
+        <script>
+            function hora() {
+                var hora = new Date()
+                var agora = hora.getHours()
+                var res = window.document.querySelector('div#res')
+                var foto = window.document.querySelector('#img img')
+                var msg = document.querySelector('div#msg')
+
+                res.innerHTML = (`${hora.toLocaleTimeString()}`)
+
+                agora = 21
+
+                if (agora >= 0 && agora < 6) {
+                    //madrugada
+                    window.document.querySelector('div#res').style.background = 'linear-gradient(to bottom, black, yellow)'
+                    foto.src = 'imagens/madrugada.jpg'
+                    msg.innerHTML = (`Bom madrugada!`)
+                     
+                } else if (agora >= 6 && agora < 12) {
+                    //bom dia
+                    window.document.querySelector('div#res').style.background = 'linear-gradient(to bottom, yellow, orange)'
+                    foto.src = 'imagens/manha.png'
+                        if (agora >= 6 && agora < 9) {
+                            msg.innerHTML = (`Bom dia! Hora de acordar e e tomar café!`)  
+                        } else if (agora >= 9 && agora < 12) {
+                            msg.innerHTML = ('Bom dia! Hora de se exercitar!')
+                        }
+
+                } else if (agora >= 12 && agora < 18) {
+                    //boa tarde
+                    window.document.querySelector('div#res').style.background = 'linear-gradient(to bottom, orange, red)'
+                    foto.src = 'imagens/tarde.png'
+
+                    if (agora >= 12 && agora < 15 ) {
+                        msg.innerHTML = (`Boa tarde! Hora de almoçar!`)
+                    } else if (agora >= 15 && agora < 18) {
+                        msg.innerHTML = (`Boa tarde! Hora de estudar!`)
+                    }
+                    
+                } else {
+                    // boa noite
+                    window.document.querySelector('div#res').style.background = 'linear-gradient(to bottom, red, black)'
+                    foto.src = 'imagens/noite.png'
+                    if (agora >= 18 && agora < 20) {
+                        msg.innerHTML = (`Boa noite! Hora de jantar!`)
+                    } else if (agora >= 20 && agora <= 23) {
+                        msg.innerHTML = (`Boa noite! Hora de Dormir!`)
+                    }
+                    
+                } 
+            }
+            setInterval(hora,1000)
+            hora()
+
+
+
+        </script>
+
+</body>
+</html>
