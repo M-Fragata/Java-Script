@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de idade</title>
+
+    <style>
+
+        header h1{
+            text-align: center;
+        }
+
+        section{
+            background-color: lightgray;
+        }
+
+        div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            padding: 10px;
+            font-size: clamp(2rem, 10vw, 1em);
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <header>
+        <h1>Verifique sua idade atual</h1>
+    </header>
+
+    <section id="op">
+        <div>
+            Digite seu ano de nascimento: <input type="number" name="" id="txtano" min="1900" max="2025">
+
+            <input type="button" value="cálcular" onclick="idade()">
+        </div>
+        <div id="res">
+            
+        </div>
+    </section>
+
+    <script>
+        function idade() {
+            var anonasc = document.querySelector('input#txtano')
+            var nasc = Number(anonasc.value)
+            var hoje = new Date()
+            var anoatual = hoje.getFullYear()
+            var anos = anoatual - nasc
+            var res = document.querySelector('div#res')
+
+            document.body.querySelector('section#op').style.background = 'orange'
+            
+            if (anos >= 0 && anos < 18) {
+                res.innerHTML = (`${anos} anos, menor de idade!`)
+            } else if (anos >= 18) {
+                res.innerHTML = (`${anos} anos, maior de idade!`)
+            } else if (anos < 0) {
+                res.innerHTML = (`[ERRO], verifique os dados e tente novamente!`)
+            }
+
+        }
+    </script>
+
+</body>
+</html>

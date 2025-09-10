@@ -45,6 +45,10 @@
             margin: auto;
         }
 
+        div#res, body{
+            transition: background 1s ease-in-out;
+        }
+
     </style>
 
 </head>
@@ -76,7 +80,7 @@
 
                 res.innerHTML = (`${hora.toLocaleTimeString()}`)
 
-                agora = 21
+                
 
                 if (agora >= 0 && agora < 6) {
                     //madrugada
