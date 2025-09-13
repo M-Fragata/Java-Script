@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>troca de cor</title>
+
+    <style>
+        body{
+            background-color: lightgray;
+        }
+        #button{
+            display: flex;
+            justify-content: center;
+            padding: 10px; 
+        }
+    </style>
+
+</head>
+<body>
+   
+    <div id="button">
+    <input type="button" value="Mude a cor de fundo" onclick="clicar()">
+    </div>
+
+    <script>
+
+        function clicar() {
+            var cores = ['yellow', 'lightblue', 'lightgreen', 'pink', 'orange']
+            var coratual = document.body.style.background
+            var novacor = cores[Math.floor(Math.random() * cores.length)]
+
+            while (novacor === coratual) {
+                novacor = cores [Math.floor(Math.random  * cores.length)]
+            }
+
+            document.body.style.background = novacor
+        }
+    </script>    
+
+</body>
+</html>
