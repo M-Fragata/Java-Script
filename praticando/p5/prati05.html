@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="contagem()">
+    <div id="res"><p>10</p></div>
+   <script>
+    function contagem() {
+        res = document.querySelector('div#res')
+        var c = 10
+        
+            setInterval(() => {
+                c += 1
+                res.innerHTML = `${c}`
+            },1000)
+        }
+   </script> 
+</body>
+</html>

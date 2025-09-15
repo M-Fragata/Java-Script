@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        header{
+            font-size: clamp(2rem, 10vw, 3em);
+            text-align: center;
+        }
+        section{
+            background-color: black;
+            max-width: 200px;
+            max-height: 700px;
+            display: block;
+            margin: auto;
+        }
+        div.circle{
+            border-radius: 50%;
+            padding: 50%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin: auto;
+        }
+        div#circle1{
+            background-color: gray;
+        }
+        div#circle2{
+            background-color: gray;
+        }
+        div#circle3{
+            background-color: gray;
+        }
+    </style>
+
+    <script>
+        function cores() {
+
+            var etapa = 0
+
+            var c1 = document.querySelector('div#circle1')
+            var c2 = document.querySelector('div#circle2')
+            var c3 = document.querySelector('div#circle3')
+            var res = document.querySelector('div#res')
+
+            setInterval(() => {
+                if (etapa === 0) {
+                    c1.style.background = 'red'
+                    c2.style.background = 'gray'
+                    c3.style.background = 'gray'
+                    res.innerHTML = 'Pare!'
+                    etapa = 1
+                } else if (etapa === 1) {
+                    c1.style.background = 'gray'
+                    c2.style.background = 'yellow'
+                    c3.style.background = 'gray'
+                    res.innerHTML = 'Atenção!'
+                    etapa = 2
+                } else {
+                    c1.style.background = 'gray'
+                    c2.style.background = 'gray'
+                    c3.style.background = 'green'
+                    res.innerHTML = 'Prossiga!'
+                    etapa = 0
+                }
+            }, 3000)
+}
+    </script>
+</head>
+<body onload="cores()">
+    <header>
+        <p>semáfaro</p>
+    </header>
+
+    <section>
+        <div class="circle" id="circle1">.</div>
+        <div class="circle" id="circle2">.</div>
+        <div class="circle" id="circle3">.</div>
+    </section>
+        <div id="res"></div>
+</body>
+</html>
