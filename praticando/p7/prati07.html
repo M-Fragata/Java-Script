@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header><h1>Fatorial</h1></header>
+    <div><input type="number" name="" id="txtnum1">
+    <input type="button" value="Fatorar" onclick="fatorar()">
+    </div>
+    
+    <div id="res"></div>
+    <script>
+        function fatoração(n) {
+            if (n == 1) {
+                return 1
+            } else {
+                return n * fatoração(n-1)
+            }
+        }
+        
+        function fatorar(){
+        var num1 = document.querySelector('input#txtnum1')
+        var n1 = Number(num1.value)
+        var res = document.querySelector('div#res')
+
+        var a = fatoração(n1)
+
+        res.innerHTML = `${a}`
+        }
+       
+    </script>
+</body>
+</html>
