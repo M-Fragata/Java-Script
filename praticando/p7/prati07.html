@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador simples</title>
+</head>
+<body>
+
+    <header><h1>Contador simples</h1></header>
+
+    <section>
+
+        <div>
+            <input type="number" name="" id="txtnum" value="0">
+            <input type="button" value="Adicionar" onclick="adicionar()">
+        </div> 
+
+        <div id="res">0</div>
+        <input type="button" value="+1" onclick="somar()">
+        <input type="button" value="-1" onclick="subtrair()">
+        <input type="button" value="Zerar" onclick="zerar()">
+
+    </section>
+
+    <script>
+      
+        var contador = 0
+
+        function atualizarTela() {
+            document.querySelector('div#res').innerHTML = contador
+            document.querySelector('input#txtnum').value = contador
+        }
+
+        function adicionar() {
+            var num = document.querySelector('input#txtnum')
+            var n = Number(num.value)
+
+            contador = n
+
+            atualizarTela()
+        }
+
+        function somar() {
+            contador ++
+            atualizarTela()
+        }
+
+        function subtrair() {
+            contador --
+            atualizarTela()
+        }
+
+        function zerar() {
+            contador = 0
+            atualizarTela()
+        }
+
+    </script>
+</body>
+</html>
