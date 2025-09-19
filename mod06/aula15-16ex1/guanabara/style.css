@@ -34,3 +34,8 @@ footer{
     text-align: center;
     font-style: italic;
 }
+
+select#flista{
+    width: 150px;
+    margin: 30px 0px 30px 0px;
+}

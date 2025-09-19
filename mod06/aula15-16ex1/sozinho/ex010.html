@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
@@ -16,10 +15,13 @@
 
     <section>
         <div>
-            <p>Número entre 1 e 100: <input type="number" name="" id="txtnum"> <input type="button" value="Adicionar" onclick="adicionar()"></p>
+            <p>Número (entre 1 e 100): <input type="number" name="" id="txtnum"> <input type="button" value="Adicionar" onclick="adicionar()"></p>
         </div>
         <div id="res">
-            
+           
+        </div>
+        <div>
+            <input type="button" value="Finalizar" onclick="finalizar()">
         </div>
 
     </section>
@@ -27,6 +29,61 @@
     <footer>
         <p> &copy; CursoemVídeo</p>
     </footer>
+
+    <script>
+
+        var a = []
+        var maior = null
+        var menor = null
+        var soma = 0
+        
+
+        function adicionar() {
+
+                var num = document.querySelector('input#txtnum')
+                var n = Number(num.value)
+
+            if (num.value.trim() === "" || n > 100 || n < 1) {
+
+                window.alert('Adicionar valor!')
+
+            } else {
+
+                
+                var res = document.querySelector('div#res')
+                a.push(n)
+                soma = soma + n
+
+                res.innerHTML = `` //para cortar o loop
+
+                res.innerHTML = `Valor ${a[a.length - 1]} adicionado <br>`
+
+                maior = a[0]
+                menor = a[0]
+
+                if (maior < n){
+                    maior = n
+                }
+                if (menor > n) {
+                    menor = n
+                }
+            }     
+        }
+
+        function finalizar() {
+
+
+            res.innerHTML = `Valores adicionados: ${a.join(" , ")}. <br>`
+            res.innerHTML += `Ao todo, temos ${a.length} números cadastrados. <br>`
+            res.innerHTML += `O maior valor informado foi ${maior}. <br>`
+            res.innerHTML += `O menor valor informado foi ${menor}. <br>`
+            res.innerHTML += `Somando todos os valores, temos ${soma}. <br>`
+            res.innerHTML += `A média dos valores digitados é ${soma / a.length}`
+            
+        }
+
+    </script>
+
 
 </body>
 </html>
