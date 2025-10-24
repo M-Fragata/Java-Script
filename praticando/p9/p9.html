@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <div>
+        <label for="num1">Digite um número: </label>
+        <input type="text" id="num1">
+    </div>
+    <div>
+        <input type="button" value="Criar" id="criar">
+    </div>
+
+    <script>
+        const button = document.querySelector('input#criar')
+        const body = document.querySelector('body')
+
+        button.addEventListener('click', () => {
+            let num1 = Number(document.querySelector('input#num1').value)
+            let num2 = (num1 * 0.15)
+
+
+            num1 = num1.toLocaleString("pt-BR",{style:"currency", currency: "BRL"})
+
+            num2 = num2.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})
+
+            const newDiv = document.createElement('div')
+            newDiv.textContent = `${num1} - ${num2}`
+
+            body.appendChild(newDiv)
+        })
+
+    </script>
+</body>
+
+</html>
