@@ -13,7 +13,7 @@ main{
 
     width: 100dvw;
     height: 100dvh;
-    background: linear-gradient(to right, rgb(255, 255, 104), rgb(252, 184, 58), orange,  rgb(255, 72, 0))
+    background: linear-gradient(10deg, rgb(255, 255, 104), rgb(252, 184, 58), orange,  rgb(255, 72, 0))
 }
 
 section{
