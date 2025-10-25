@@ -6,9 +6,9 @@ const second = document.querySelector('p#second')
     setInterval( () => {
         const date = new Date()
 
-        const dateHour = date.getHours()
-        const dateMinute = date.getMinutes()
-        const dateSecond = date.getSeconds()
+        const dateHour = date.getHours().toString().padStart(2, "0")
+        const dateMinute = date.getMinutes().toString().padStart(2, "0")
+        const dateSecond = date.getSeconds().toString().padStart(2, "0")
 
 
         hour.textContent = dateHour
