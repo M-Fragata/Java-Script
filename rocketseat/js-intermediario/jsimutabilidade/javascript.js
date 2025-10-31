@@ -106,4 +106,3 @@ book.author.name = "Matheus"
 console.log(book)
 */
 //Aula 4 - Deep Freezing
-
