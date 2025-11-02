@@ -104,7 +104,7 @@ values(1, 2, "c", 4)
 
 //                        Aula 5
 //Spread (espalhar) permite que um objeto iterável, como uma expressão de array ou uma string seja expandido para ser usado onde zero ou mais argumentos.
-
+/*
 const numbers = [1, 2, 3]
 console.log(numbers)
 
@@ -127,3 +127,4 @@ const data = [
 ]
 //Utilizando o spread no array com objetos.
 console.log(...data)
+*/

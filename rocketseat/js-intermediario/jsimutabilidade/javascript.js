@@ -106,3 +106,70 @@ book.author.name = "Matheus"
 console.log(book)
 */
 //Aula 4 - Deep Freezing
+/*
+const book = {
+    title: "Objetos Imutáveis",
+    category: "javascript",
+    author: {
+        name: "Matheus",
+        email: "matheusdemoraes2@gmail.com",
+    },
+}
+
+Object.freeze(book)
+
+book.category = "CSS" //Não altera o valor da category pois book está com Object.freeze
+book.author.name = "Matheuss" //Altera o author.name pois está aninhado
+
+console.log(book)
+
+function deepFreeze(object) {
+    //Obtém um array com todas as propriedades do objeto.
+    const props = Reflect.ownKeys(object)
+    
+
+    //Itera sobre todas as propriedades do objeto.
+    for (const prop of props) {
+        //Obtém o valor associado à propriedade atual.
+        const value = object[prop]
+
+        //Verifica se o valor é um objeto ou função para aplicar o freeze em objetos aninhados.
+        if(value && typeof value === "object" || typeof value === "function"){
+            deepFreeze(value)
+        }
+    }
+    //Retorna objeto congelado
+    return Object.freeze(object)
+}
+
+deepFreeze(book)
+
+book.author.name = "Diego" //Objeto com deepfreeze, não altera mais objetos aninhados.
+
+console.log(book)
+*/
+// Aula 5 - Manipulando objetos imutáveis
+/*
+const book = {
+    title: "Objetos Imutáveis",
+    category: "javascript",
+    author: {
+        name: "Matheus",
+        email: "matheusdemoraes2@gmail.com",
+    },
+}
+
+const updateBook = {
+    ...book, 
+    title: "Front-end moderno c/ HTML", 
+    category: "HTML",
+    type: "Programming",
+}
+
+console.log(updateBook)
+
+// Utilizando operador de desestruturação (rest operator) para remover propriedades.
+const { category, ...bookWithoutCategory } = updateBook
+
+console.log(bookWithoutCategory)
+*/
