@@ -1,5 +1,13 @@
-import { multiply, sum } from "./calc.js"
+/*import sum, { multiply as m} from "./calc.js"
 
 console.log("4 + 6 =",sum(4,6))
-console.log(`4 x 6 = ${multiply(4,6)}`)
-console.log("Hello")
+console.log(`4 x 6 = ${m(4,6)}`)
+*/
+
+import { Calc } from "./calc.js"
+
+const calc = new Calc()
+
+console.log("4 + 6 =",calc.sum(4, 6))
+console.log(`4 x 6 = ${calc.multiply(4, 6)}`)
+console.log(`${calc.name}`)
