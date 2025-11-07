@@ -4,5 +4,11 @@
   },
   "dependencies": {
     "json-server": "^1.0.0-beta.3"
+  },
+  "scripts": {
+    "build": "babel main.js --out-dir ./dist"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.28.5"
   }
 }
