@@ -1,0 +1,21 @@
+
+header{
+    text-align: center;
+}
+
+main{
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.styleItens{
+    display: flex;
+    margin: 10px;
+    gap: 10px;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
